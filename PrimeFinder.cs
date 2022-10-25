@@ -14,18 +14,17 @@ namespace PrimeFinderLab
             }
 
 
-            public int SelectANumber()
+            public int SelectANumber(int userinput)
             {
-            GetPrimesInRange();
-            int selectednumb;
+            List<int> Primes = GetPrimesInRange();
                  while (true)
                  {
 
                       Welcome();
                       try
                       {
-                    selectednumb = int.Parse(Console.ReadLine());
-                    if (selectednumb > 25 || selectednumb<0)
+
+                    if (userinput > 25 || userinput<0)
                             {
                             Console.WriteLine(" Please input a number that is less than 26 and greater than 0 ");
                             continue;
@@ -39,8 +38,9 @@ namespace PrimeFinderLab
 
                        break;
                  }
-                   selectednumb--;
-            return selectednumb;
+                   userinput--;
+
+            return Primes[userinput];
             }    
 
 
@@ -55,10 +55,6 @@ namespace PrimeFinderLab
                         primes.Add(i);
                     }
                 }
-                //foreach (int p in primes)
-                //{
-                //    Console.WriteLine(p);
-                //}
                 return primes;
             }
 
@@ -86,13 +82,13 @@ namespace PrimeFinderLab
                 return true;
             }
 
-        public int GetNumbersBack()
-        {
-            List<int> Primes = GetPrimesInRange();
-            int selectedNumber = SelectANumber();
+        //public int GetNumbersBack()
+        //{
+        //    List<int> Primes = GetPrimesInRange();
+        //    int selectedNumber = SelectANumber();
 
-            return Primes[selectedNumber];
-        }
+        //    return Primes[selectedNumber];
+        //}
 
 
 

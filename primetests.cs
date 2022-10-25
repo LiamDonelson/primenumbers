@@ -22,7 +22,7 @@ namespace PrimeFinderLab
           PrimeFinder pf = new PrimeFinder();
 
           // ACT
-          hello = pf.GetNumbersBack();
+          hello = pf.SelectANumber(hello);
           
 
           // ASSERT
